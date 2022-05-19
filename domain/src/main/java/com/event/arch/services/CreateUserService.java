@@ -6,7 +6,6 @@ import java.util.UUID;
 import com.event.arch.entities.User;
 import com.event.arch.events.EventDispatcher;
 import com.event.arch.events.user.UserCreatedEvent;
-import com.event.arch.events.user.UserCreatedSendEmailEvent;
 import com.event.arch.repositories.UserRepository;
 
 public class CreateUserService {
@@ -23,8 +22,6 @@ public class CreateUserService {
         var user = new User(UUID.randomUUID(), username, password, email);
         this.userRepository.add(user);
         var userCreatedEvent = new UserCreatedEvent(Instant.now(), username, email);
-        var userCreatedSendEmailEvent = new UserCreatedSendEmailEvent(Instant.now(), email);
         this.eventDispatcher.dispatch(userCreatedEvent);
-        this.eventDispatcher.dispatch(userCreatedSendEmailEvent);
     }
 }
