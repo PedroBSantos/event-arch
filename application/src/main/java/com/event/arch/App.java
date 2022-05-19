@@ -2,8 +2,8 @@ package com.event.arch;
 
 import com.event.arch.event_dispatcher.EventDispatcherImpl;
 import com.event.arch.events.EventType;
-import com.event.arch.events.user.UserCreatedListener;
-import com.event.arch.events.user.UserCreatedSendEmailListener;
+import com.event.arch.listeners.UserCreatedListener;
+import com.event.arch.listeners.UserCreatedSendEmailListener;
 import com.event.arch.repositories.UserRepositoryInMemoryImpl;
 import com.event.arch.services.CreateUserService;
 

@@ -1,8 +1,9 @@
-package com.event.arch.events.user;
+package com.event.arch.listeners;
 
 import java.util.logging.Logger;
 
 import com.event.arch.events.EventListener;
+import com.event.arch.events.user.UserCreatedEvent;
 
 public class UserCreatedSendEmailListener implements EventListener<UserCreatedEvent> {
 
